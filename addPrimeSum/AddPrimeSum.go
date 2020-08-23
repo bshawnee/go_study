@@ -35,6 +35,9 @@ func isPrime(num int) bool {
 }
 
 func findPrime(end int) int {
+	if end <= 1 {
+		return 0
+	}
 	digits := make([]int, end)
 	for i := 1; (i - 1) < len(digits); i++ {
 		digits[i-1] = i;
@@ -66,5 +69,7 @@ func sumPrime(prime []int) int {
 func main() {
 	if len(os.Args) == 2 {
 		fmt.Println(findPrime(myAtoi(os.Args[1])))
+	}else {
+		fmt.Println(0)
 	}
 }
